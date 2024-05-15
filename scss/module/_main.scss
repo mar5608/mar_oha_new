@@ -1,0 +1,1124 @@
+@use "../setting/config";
+@use "../setting/color";
+@use "../mixin/mixin";
+
+/*----------------------------------
+共通
+-----------------------------------*/
+
+body {
+  font-size: config.$font-size-base;
+  line-height: config.$line-height-base;
+  color: color.$color-base;
+  font-family: config.$font-family-ja;
+  background: color.$background-base;
+}
+
+// img {
+//   max-width: 100%;
+// }
+
+.hidden-sp {
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+
+.hidden-pc {
+  @include mixin.mq(pc) {
+    display: none;
+  }
+}
+
+.inner {
+  padding-left: 15px;
+  padding-right: 15px;
+  @include mixin.mq(pc) {
+    max-width: calc(config.$width-inner + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.button {
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  padding: calc(10px - 2px) calc(30px - 2px);
+  display: inline-block;
+  border-radius: 60px;
+  border: 2px solid currentcolor; //currentcolor文字の色とボーダーの色が同じ時
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.7;
+  color: color.$color-base;
+  min-width: 150px;
+  text-align: center;
+
+  &--type2 {
+    // border-color: #fff;
+    background-color: #111;
+    color: #fff;
+  }
+}
+
+.title {
+  text-align: center;
+  font-family: config.$font-family-en;
+}
+
+.title__en {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1; /* 38px */
+  letter-spacing: 3.8px;
+  @include mixin.mq(pc) {
+    font-size: 50px;
+    letter-spacing: 5px;
+  }
+}
+
+.title__ja {
+  font-size: 14px;
+  line-height: 1; /* 14px */
+  letter-spacing: 1.12px;
+  margin-top: 14px;
+  @include mixin.mq(pc) {
+    font-size: 16px;
+    letter-spacing: 1.28px;
+  }
+}
+/*----------------------------------
+header
+-----------------------------------*/
+
+.header {
+  height: 80px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 16px;
+  min-width: calc(375 - 15 * 2);
+  @include mixin.mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 21px;
+    //paddingleft/right分を引いてあげる
+    max-width: calc(config.$width-inner + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header__logo {
+  a {
+    img {
+      width: 100px;
+      display: block; //余計な隙間が出づらくなる
+
+      @include mixin.mq(pc) {
+        width: 135px;
+        padding-top: 3px;
+      }
+    }
+  }
+}
+
+.header__nav {
+  display: none;
+  @include mixin.mq(pc) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.header__link {
+  font-weight: 700;
+  letter-spacing: 0.48px;
+}
+
+.header__button {
+  // font-weight: 700;
+  // letter-spacing: 0.48px;
+  // padding: calc(10px - 2px) calc(30px - 2px);
+  // display: inline-block;
+  // border-radius: 60px;
+  // border: 2px solid color.$color-base;
+  // background: #fff;
+}
+
+.drawer-icon {
+  width: 36px;
+  height: 21px;
+  position: relative;
+  z-index: 51;
+  margin-top: 3px;
+  @include mixin.mq(pc) {
+    display: none;
+  }
+}
+
+.drawer-icon__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  border-radius: 6px;
+  background: #111;
+  // background-color: color.$color-base;
+
+  &:nth-of-type(1) {
+  }
+  &:nth-of-type(2) {
+    top: 9px;
+  }
+  &:nth-of-type(3) {
+    top: 18px;
+  }
+}
+
+/*----------------------------------
+mv
+-----------------------------------*/
+
+.mv {
+  border-radius: 20px;
+  max-width: calc(100% - 15px * 2);
+  margin-left: auto;
+  margin-right: auto;
+  background: color.$color-gradation;
+  margin-top: -10px;
+  @include mixin.mq(pc) {
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    //paddingleft/right分を引いてあげる
+    max-width: calc(100% - 30px * 2);
+  }
+}
+
+.mv__inner {
+  padding: 50px 20px 255px 20px;
+  position: relative;
+  @include mixin.mq(pc) {
+    padding-top: 110px;
+    padding-bottom: 109px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    //paddingを持たせつつcalcでpadding分を足す
+    max-width: calc(1040px + 30px * 2);
+  }
+}
+
+.mv__content {
+}
+
+.mv__lead1,
+.mv__lead2 {
+  font-feature-settings: "palt" on;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1; /* 22px */
+  letter-spacing: 2.2px;
+  // bg
+  border-radius: 5px;
+  background: color.$color-base-white;
+  padding: 10px;
+  //表示
+  display: block;
+  width: fit-content; //文字のサイズに応じてサイズが決まる
+  margin-left: auto; //左右中央に寄せる（セット）
+  margin-right: auto; //左右中央に寄せる（セット）
+  @include mixin.mq(pc) {
+    margin-left: 0;
+    margin-right: 0;
+    color: #111;
+    font-size: 38px;
+    letter-spacing: 3.8px;
+    padding: 12px 16px;
+  }
+}
+
+.mv__lead2 {
+  margin-top: 8px;
+  @include mixin.mq(pc) {
+    margin-top: 14px;
+  }
+}
+.mv__description {
+  text-align: center;
+  letter-spacing: 0.86px;
+  font-weight: 700;
+  margin-top: 26px;
+  // line-height: 170%; /* 27.2px */
+  @include mixin.mq(pc) {
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 0.54px;
+    margin-top: 20px;
+  }
+}
+
+.mv__button {
+  margin-top: 22px;
+  text-align: center;
+  @include mixin.mq(pc) {
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  a {
+    // text-align: center;
+    // font-weight: 700px;
+    // letter-spacing: 0.48px;
+    // color: color.$color-base-white;
+    // //ボタン
+    // display: inline-block;
+    // padding: calc(10px - 2px) calc(30px - 2px);
+    // border-radius: 60px;
+    // border: 2px solid color.$color-base-white;
+    // background: color.$color-base;
+  }
+}
+
+.mv__image {
+  position: absolute;
+  right: 0;
+  bottom: -108px;
+  width: 345px;
+  text-align: center;
+  @include mixin.mq(pc) {
+    text-align: right;
+    right: 30px;
+    // width: 600px; //デザインカンプより
+    width: calc(600px / 1100px * 100%); //1100pxはmv__innerの値
+    margin-top: 30px;
+    bottom: -88px; //は見出し部分
+  }
+}
+
+/*----------------------------------
+case
+-----------------------------------*/
+
+.case {
+  margin-top: 108px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include mixin.mq(pc) {
+    margin-top: 88px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+}
+.case__inner {
+  padding-left: 40px;
+  padding-right: 40px;
+  @include mixin.mq(pc) {
+    max-width: calc(920px + 40px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.case__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1; /* 18px */
+  letter-spacing: 1.8px;
+  text-align: center;
+  @include mixin.mq(pc) {
+    font-size: 20px;
+    // line-height: 100%; /* 20px */
+    letter-spacing: 2px;
+  }
+}
+
+.case__items {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 15px; //縦22px横15px
+
+  @include mixin.mq(pc) {
+    margin-top: 54px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px 40px; //縦26px横40px
+  }
+}
+
+.case__item {
+  text-align: center;
+}
+
+/*----------------------------------
+news
+-----------------------------------*/
+
+.news {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include mixin.mq(pc) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.news__inner {
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // @include mixin.mq(pc) {
+  //   max-width: calc(config.$width-inner + 30px * 2);
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+}
+
+.news__card {
+  border-radius: 20px;
+  background: color.$color-base-white;
+  // background: rgba(0,0,0,0.8);
+
+  box-shadow: 0px 9px 30px 0px color.$background-base;
+  padding: 40px 12px;
+  @include mixin.mq(pc) {
+    border-radius: 30px;
+    padding-left: calc(105px / 1040px * 100%); //calc(105px / 1140px * 100%);
+    padding-right: calc(105px / 1000px * 100%); //calc(105px / 1140px * 100%);
+    padding-top: 40px;
+    padding-bottom: 34px;
+  }
+}
+
+.news__title {
+  font-family: config.$font-family-en;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1; /* 38px */
+  letter-spacing: 3.8px;
+  text-align: center;
+
+  @include mixin.mq(pc) {
+    text-align-last: left;
+    font-size: 50px;
+    // line-height: 1; /* 50px */
+    letter-spacing: 5px;
+  }
+}
+
+.news__lists {
+  margin-top: 28px;
+  @include mixin.mq(pc) {
+    margin-top: 30px;
+  }
+}
+
+.news__list {
+  //２番目以降の指定nth-childで指定
+  &:nth-child(n + 2) {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 0;
+      left: 0;
+      background: #e3e3e3;
+    }
+  }
+}
+.news-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include mixin.mq(pc) {
+    flex-direction: row;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 0;
+  }
+}
+
+//もっと見る
+.news__link {
+  margin-top: 22px;
+  text-align: right;
+  @include mixin.mq(pc) {
+    margin-top: 20px;
+  }
+  a {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1; /* 16px */
+    border-bottom: 2px solid #111;
+    padding-bottom: calc(10px - 2px);
+    vertical-align: top;
+  }
+}
+
+.news__link-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @include mixin.mq(pc) {
+    width: 247px;
+    flex-shrink: 0; //幅を縮めないでください。0なら247px担保s
+    gap: 14px;
+  }
+}
+
+.news__link-date {
+  color: #333;
+  white-space: nowrap; //改行しないで
+  @include mixin.mq(pc) {
+    width: 119px;
+    // text-align-last: left;
+  }
+}
+
+.news__link-label {
+  color: color.$color-base-white;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 170%; /* 18.7px */
+  padding: 2px 10px;
+  border-radius: 2px;
+  //4文字以下の時の余白を想定して最小の幅を決める
+  min-width: 63px;
+  text-align: center;
+
+  &.news-link__label--news {
+    background: #e4780c;
+  }
+
+  &.news-link__label--column {
+    background: #ecb815;
+  }
+
+  &.news-link__label--event {
+    background: #389b47;
+  }
+}
+
+.news__link-title {
+  @include mixin.mq(pc) {
+    // text-align-last: left;
+    // padding-top: 8px;
+    // padding-bottom: 8px;
+  }
+}
+
+/*----------------------------------
+about
+-----------------------------------*/
+
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden; //全体が横スクロールしないように
+  @include mixin.mq(pc) {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+
+.about__inner {
+}
+
+.about__title {
+  text-align: center;
+  img {
+    width: 180px;
+    @include mixin.mq(pc) {
+      width: 230px;
+    }
+  }
+}
+
+.about__content {
+  margin-top: 150px;
+  padding-top: 288px;
+  padding-bottom: 105px;
+  position: relative; //親
+  text-align: center; //全部中央揃え
+  @include mixin.mq(pc) {
+    margin-top: 176px;
+    padding-top: 284px;
+    padding-bottom: 100px;
+  }
+
+  //擬似要素beforeは要素の直前に内容を追加
+  &::before {
+    content: ""; //挿入したい文字
+    width: 1100px;
+    height: 1100px; //幅と高さが同じで正円
+    border-radius: 50%;
+    background: color.$color-gradation;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1; /* 負の数はより低い優先度になる */
+
+    @include mixin.mq(pc) {
+      width: 800px;
+      height: 800px; //幅と高さが同じで正円
+    }
+  }
+}
+
+.about__image {
+  position: absolute;
+  text-align: center;
+  top: -110px;
+  left: 0;
+  width: 100%;
+  @include mixin.mq(pc) {
+    top: -126px;
+  }
+  img {
+    width: 320px;
+    @include mixin.mq(pc) {
+      width: 330px;
+    }
+  }
+}
+
+.about__text {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 2.3; /* 36.8px */
+}
+
+.about__pop {
+  margin-top: 42px;
+  font-weight: 700;
+  line-height: 1; /* 16px */
+  letter-spacing: 1.28px;
+  @include mixin.mq(pc) {
+    margin-top: 42px;
+  }
+}
+
+.about__button {
+  margin-top: 12px;
+  @include mixin.mq(pc) {
+    margin-top: 15px;
+  }
+  button {
+    // font-weight: 700;
+    // letter-spacing: 0.48px;
+    // padding: calc(10px - 2px) calc(30px - 2px);
+    // display: inline-block;
+    // border-radius: 60px;
+    // border: 2px solid color.$color-base;
+    // background: #fff;
+    // font-size: 16px;
+    // line-height: 1.7;
+  }
+}
+
+/*----------------------------------
+movie
+-----------------------------------*/
+
+.movie {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: url(../../img/section-bg.png) repeat top left;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.movie__inner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// .movie__title {
+//   text-align: center;
+// }
+
+.movie__iframe {
+  margin-top: 32px;
+  text-align: center;
+  @include mixin.mq(pc) {
+    margin-top: 56px;
+  }
+  iframe {
+    width: 345px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 345/194; //縦横比を設定
+    vertical-align: top;
+
+    @include mixin.mq(pc) {
+      width: 640px;
+      aspect-ratio: 640/360;
+    }
+  }
+}
+
+/*----------------------------------
+    how-to-use
+-----------------------------------*/
+
+.how-to-use {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.how-to-use__inner {
+}
+
+.how-to-use__title {
+}
+
+.how-to-use__boxes {
+  margin-top: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 112px;
+  @include mixin.mq(pc) {
+    margin-top: 89px;
+    gap: 75px;
+  }
+}
+
+.how-to-use__box {
+  border-radius: 30px;
+  background: #fffbf0;
+  padding: 54px 40px 48px;
+  @include mixin.mq(pc) {
+    padding: 44px 10px 56px;
+    border-radius: 40px;
+  }
+}
+
+.how-to-use__box-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 170%; /* 30.6px */
+  letter-spacing: 1.8px;
+  position: relative;
+
+  @include mixin.mq(pc) {
+    font-size: 22px;
+    letter-spacing: 2.2px;
+    padding-right: 95px;
+    width: fit-content; //テキストの幅
+    margin-left: auto; //中央寄せ
+    margin-right: auto;
+  }
+
+  img {
+    width: 85px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: calc(100% + 16px);
+
+    @include mixin.mq(pc) {
+      right: 0;
+      transform: translateX(0);
+      bottom: 0;
+    }
+  }
+
+  .is-type2 & {
+    @include mixin.mq(pc) {
+      padding-right: 0;
+      padding-left: 95px;
+
+      img {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
+
+.how-to-use__steps {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include mixin.mq(pc) {
+    max-width: 948px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+
+.how-to-use__step {
+  @include mixin.mq(pc) {
+    flex: 1; //均等に並べたい時、子アイテムに1を設定
+    // width: calc(33.3% - 24px * 2 / 3); //24px余白が2つあるので1/3を引く
+  }
+}
+
+.step-box {
+  padding-top: 45px;
+  position: relative;
+}
+
+.step-box__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%; //50%で正円にすることができる
+  border: 3px solid #111;
+  background: #f5810e;
+  font-family: config.$font-family-en;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  //is-type2の中にあるstep^box__titleに適用できる
+  .is-type2 & {
+    background-color: #fabe00;
+  }
+}
+
+.step-box__title-text {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1; /* 13px */
+  letter-spacing: 1.3px;
+}
+
+.step-box__title-number {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1; /* 34px */
+  letter-spacing: 3.4px;
+  margin-top: 3px;
+}
+
+.step-box__body {
+  border-radius: 30px;
+  border: 3px solid #111;
+  background: #fff;
+  overflow: hidden;
+  padding: calc(50px - 3px) 10px calc(26px - 3px); //上 左右 下
+  text-align: center;
+}
+
+.step-box__image {
+  img {
+    width: 160px;
+    @include mixin.mq(pc) {
+      width: 200px;
+    }
+  }
+}
+
+.step-box__text {
+  color: #111;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 170%; /* 27.2px */
+  letter-spacing: 0.48px;
+  margin-top: 10px;
+}
+
+/*----------------------------------
+    merit
+-----------------------------------*/
+
+.merit {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.merit__inner {
+}
+
+.inner {
+}
+
+.merit__title {
+}
+
+.title {
+}
+
+.title__en {
+}
+
+.title__jp {
+}
+
+.merit__boxes {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include mixin.mq(pc) {
+    gap: 40px;
+    margin-top: 50px;
+  }
+}
+
+.merit-box__content {
+  @include mixin.mq(pc) {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; //横向き反対
+    gap: 50px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-reverse & {
+    //&後ろは.is-reverseが親にある場合
+    @include mixin.mq(pc) {
+      flex-direction: row; //横向き反対
+    }
+  }
+}
+.merit-box {
+  border-radius: 20px;
+  background: #fff;
+  padding: 10px 20px 24px;
+  @include mixin.mq(pc) {
+    padding: 20px 18px;
+  }
+}
+
+.merit-box__image {
+  text-align: center;
+  @include mixin.mq(pc) {
+    width: calc(350 / 920 * 100%);
+  }
+  img {
+    width: 200px;
+    // height: 200px;
+    @include mixin.mq(pc) {
+      width: 350px;
+    }
+  }
+}
+
+.merit-box__body {
+  margin-top: 18px;
+  @include mixin.mq(pc) {
+    width: calc(520 / 920 * 100%);
+  }
+}
+
+.merit-box__title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: config.$font-family-en;
+  font-weight: 700;
+  line-height: 170%; /* 27.2px */
+  letter-spacing: 1.6px;
+
+  @include mixin.mq(pc) {
+    font-family: config.$font-family-ja;
+    font-size: 20px;
+    letter-spacing: 2px;
+    gap: 28px;
+  }
+}
+
+.merit-box__number {
+  color: color.$color-key2;
+  font-family: config.$font-family-en;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 1; /* 70px */
+  @include mixin.mq(pc) {
+    font-size: 110px;
+    line-height: 1;
+  }
+}
+
+.merit-box__text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 2; /* 28px */
+  @include mixin.mq(pc) {
+    color: #111;
+    font-size: 15px;
+  }
+}
+
+/*----------------------------------
+    compare
+-----------------------------------*/
+
+.compare {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: color.$color-base-white;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.compare__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+  @include mixin.mq(pc) {
+    font-size: 24px;
+  }
+}
+
+.compare__content {
+  margin-top: 40px;
+  padding-bottom: 38px;
+  overflow-x: auto; //親クラスに指定、横スクロール発生
+  @include mixin.mq(pc) {
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+}
+
+.compare__table {
+  // border-collapse: separate; //デフォルト2重
+  border-collapse: collapse; //基本はこっちをつかつ
+  width: 620px;
+  table-layout: fixed; //テーブルが中の各列を全てを等しくしてくれる
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.mq(pc) {
+    width: 1000px;
+  }
+
+  th,
+  td {
+    text-align: center;
+    font-weight: 700;
+    height: 60px;
+    vertical-align: middle;
+
+    @include mixin.mq(pc) {
+      height: 100px;
+    }
+
+    &:nth-child(1) {
+      width: 130px;
+      @include mixin.mq(pc) {
+        width: 250px;
+      }
+    }
+    &:nth-child(2) {
+      width: 90px;
+      background: #fff9e5;
+      font-size: 16px;
+      letter-spacing: 0.48px;
+
+      @include mixin.mq(pc) {
+        width: 250px;
+        font-size: 25px;
+        letter-spacing: 0.75px;
+      }
+      img {
+        width: 70px;
+
+        @include mixin.mq(pc) {
+          width: 123px;
+        }
+      }
+    }
+  }
+
+  th {
+    letter-spacing: 0.48px;
+    @include mixin.mq(pc) {
+      font-size: 20px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  td {
+    font-size: 14px;
+    letter-spacing: 0.42px;
+    @include mixin.mq(pc) {
+      font-size: 16px;
+      letter-spacing: 4.8px;
+    }
+  }
+
+  //上書きしていく
+  thead {
+    th {
+      letter-spacing: 1.6px;
+
+      @include mixin.mq(pc) {
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  //テーブル本体のtopのみ
+  tbody {
+    tr {
+      border-top: 1.5px solid color.$color-base;
+      @include mixin.mq(pc) {
+        border-top-width: 3px;
+      }
+    }
+
+    th,
+    td {
+      height: calc(60px - 1.5px);
+
+      @include mixin.mq(pc) {
+        height: 100px;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+}
+
+.compare__attention {
+  margin-top: 11px;
+  color: #686868;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+  @include mixin.mq(pc) {
+    display: none;
+  }
+
+  //111
+}
