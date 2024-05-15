@@ -860,24 +860,6 @@ movie
   }
 }
 
-.merit__inner {
-}
-
-.inner {
-}
-
-.merit__title {
-}
-
-.title {
-}
-
-.title__en {
-}
-
-.title__jp {
-}
-
 .merit__boxes {
   margin-top: 30px;
   display: flex;
@@ -1004,6 +986,26 @@ movie
   margin-top: 40px;
   padding-bottom: 38px;
   overflow-x: auto; //親クラスに指定、横スクロール発生
+  // overflow: scroll;
+  // white-space: nowrap;
+  //スクロールバー
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 112px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(50%, #4169e1),
+      to(#c71585)
+    );
+    // background: linear-gradient(to bottom, #4169e1 50%, #c71585);
+    background: #fabe00;
+    border-radius: 20px;
+  }
+
   @include mixin.mq(pc) {
     margin-top: 60px;
     margin-bottom: 0;
@@ -1119,6 +1121,95 @@ movie
   @include mixin.mq(pc) {
     display: none;
   }
+}
 
-  //111
+/*----------------------------------
+    contact
+-----------------------------------*/
+.contact {
+  padding-top: 60px;
+  padding-bottom: 78px;
+  background: url(../../img/section-bg.png) repeat top left;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.contact__inner {
+}
+
+.contact__box {
+  border-radius: 30px;
+  background: #fff;
+  padding: 60px 20px;
+  @include mixin.mq(pc) {
+    padding-left: 264px;
+    padding-right: 264px;
+  }
+}
+
+.contact__title {
+}
+
+.contact__form {
+  margin-top: 30px;
+  @include mixin.mq(pc) {
+    margin-top: 50px;
+  }
+}
+
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; //縦並びのflexで縦の余白はgapで設定
+}
+
+.contact__field {
+}
+
+.form-field__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-field__label {
+  font-weight: 700;
+}
+
+.form-field__tag {
+  display: inline-block;
+  border-radius: 2px;
+  background: #ee8013;
+  padding: 6px 9px 5px 9px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.98px;
+}
+
+.form-field__item {
+  margin-top: 14px;
+
+  //属性を指定する（typeがtextのもの）
+  [type="text"],
+  [type="email"] {
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid #000;
+    background: #fff;
+    padding: 15px 16px 14px;
+  }
+}
+
+.contact__privacy {
+  margin-top: 30px;
+}
+
+.contact__button {
+  margin-top: 30px;
+  @include mixin.mq(pc) {
+    margin-top: 38px;
+  }
 }
