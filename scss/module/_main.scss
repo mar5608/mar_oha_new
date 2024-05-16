@@ -1201,6 +1201,25 @@ movie
     background: #fff;
     padding: 15px 16px 14px;
   }
+
+  [type="radio"] {
+    width: 1px;
+    height: 1px;
+    position: absolute; //浮かせてレイアウトとは関係ないようにする
+    clip: rect(0, 0, 0, 0); //見えないようにする
+    overflow: hidden;
+    //display:noneにすると標準の機能が消えるので消さない
+
+    //radioボタンにチェックがついた時にafterの透過度を0->1にする
+    //checkedとform-field_radio-textは階層が同じなので+をつける
+    &:checked {
+      + .form-field_radio-text {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .contact__privacy {
@@ -1211,5 +1230,46 @@ movie
   margin-top: 30px;
   @include mixin.mq(pc) {
     margin-top: 38px;
+  }
+}
+
+.form-field__item {
+}
+.form-filed__radios {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field_radio-text {
+  font-weight: 700;
+  padding-left: 28px; //24+4px
+  position: relative;
+
+  //form-field_radio-textを起点にして擬似要素を作っていく
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+
+  &::before {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #111;
+    left: 0;
+    transition: border-color 0.3s;
+  }
+
+  //after 中のオレンジの丸
+  &::after {
+    width: 10px;
+    height: 10px;
+    background: #f5810e;
+    left: 7px;
+    opacity: 0;
   }
 }

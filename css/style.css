@@ -1371,6 +1371,16 @@ movie
   background: #fff;
   padding: 15px 16px 14px;
 }
+.form-field__item [type=radio] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.form-field__item [type=radio]:checked + .form-field_radio-text:after {
+  opacity: 1;
+}
 
 .contact__privacy {
   margin-top: 30px;
@@ -1383,4 +1393,44 @@ movie
   .contact__button {
     margin-top: 38px;
   }
+}
+
+.form-filed__radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.form-field_radio-text {
+  font-weight: 700;
+  padding-left: 28px;
+  position: relative;
+}
+.form-field_radio-text::before, .form-field_radio-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+}
+.form-field_radio-text::before {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #111;
+  left: 0;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.form-field_radio-text::after {
+  width: 10px;
+  height: 10px;
+  background: #f5810e;
+  left: 7px;
+  opacity: 0;
 }
