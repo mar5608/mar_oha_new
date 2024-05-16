@@ -1359,6 +1359,9 @@ movie
   line-height: 1;
   letter-spacing: 1.98px;
 }
+.form-field__tag.is-option {
+  background: #43b549;
+}
 
 .form-field__item {
   margin-top: 14px;
@@ -1380,6 +1383,11 @@ movie
 }
 .form-field__item [type=radio]:checked + .form-field_radio-text:after {
   opacity: 1;
+}
+.form-field__item select {
+  border-radius: 5px;
+  border: 3px solid #111;
+  background: #fff;
 }
 
 .contact__privacy {

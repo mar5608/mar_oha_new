@@ -1187,6 +1187,10 @@ movie
   font-weight: 700;
   line-height: 1;
   letter-spacing: 1.98px;
+
+  &.is-option {
+    background: #43b549;
+  }
 }
 
 .form-field__item {
@@ -1219,6 +1223,12 @@ movie
         }
       }
     }
+  }
+
+  select {
+    border-radius: 5px;
+    border: 3px solid #111;
+    background: #fff;
   }
 }
 
@@ -1272,4 +1282,8 @@ movie
     left: 7px;
     opacity: 0;
   }
+
+  // &:focus{
+
+  // }
 }
