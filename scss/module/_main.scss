@@ -1202,7 +1202,7 @@ movie
   padding: 15px 16px 14px;
 }
 
-.from-radio__input {
+.form-radio__input {
   width: 1px;
   height: 1px;
   position: absolute; //浮かせてレイアウトとは関係ないようにする
@@ -1213,7 +1213,7 @@ movie
   //radioボタンにチェックがついた時にafterの透過度を0->1にする
   //checkedとform-field_radio-textは階層が同じなので+をつける
   &:checked {
-    + .from-radio__text {
+    + .form-radio__text {
       &::after {
         opacity: 1;
       }
@@ -1244,7 +1244,7 @@ movie
   padding: 16px;
 }
 
-.from-radio__text {
+.form-radio__text {
   font-weight: 700;
   padding-left: 28px; //24+4px
   position: relative;
@@ -1280,6 +1280,7 @@ movie
 
 .contact__privacy {
   margin-top: 30px;
+  text-align: center;
 }
 
 .contact__button {
@@ -1300,7 +1301,7 @@ movie
 .form-checkbox {
 }
 
-.from-checkbox__input {
+.form-checkbox__input {
   width: 1px;
   height: 1px;
   position: absolute; //浮かせてレイアウトとは関係ないようにする
@@ -1309,12 +1310,16 @@ movie
   //display:noneにすると標準の機能が消えるので消さない
 }
 
-.from-checkbox__text {
+.form-checkbox__text {
   position: relative;
   padding-left: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 170%; /* 23.8px */
 
   a {
-    // text-decoration: solid;
+    text-decoration-line: underline;
+    font-weight: 700;
   }
   &::before,
   &::after {
@@ -1342,5 +1347,16 @@ movie
     left: -1px;
     margin-top: -1.2px;
     background: url(../../img/check-icon.png) no-repeat center center / contain; //contain:縦横比保ったまま
+    opacity: 0;
+  }
+
+  //チェックがついた時にafterの透過度を0->1にする
+  //checkedとform-checkbox__textは階層が同じなので+をつける
+  &:checked {
+    + .form-checkbox__text {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 }
