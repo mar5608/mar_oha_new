@@ -1469,6 +1469,9 @@ movie
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
+.form-checkbox__input:checked + .form-checkbox__text::after {
+  opacity: 1;
+}
 
 .form-checkbox__text {
   position: relative;
@@ -1503,7 +1506,4 @@ movie
   margin-top: -1.2px;
   background: url(../../img/check-icon.png) no-repeat center center/contain;
   opacity: 0;
-}
-.form-checkbox__text:checked + .form-checkbox__text::after {
-  opacity: 1;
 }

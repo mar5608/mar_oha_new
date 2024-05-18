@@ -1308,6 +1308,16 @@ movie
   clip: rect(0, 0, 0, 0); //見えないようにする
   overflow: hidden;
   //display:noneにすると標準の機能が消えるので消さない
+
+  //チェックがついた時にafterの透過度を0->1にする
+  //checkedとform-checkbox__textは階層が同じなので+をつける
+  &:checked {
+    + .form-checkbox__text {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .form-checkbox__text {
@@ -1348,15 +1358,5 @@ movie
     margin-top: -1.2px;
     background: url(../../img/check-icon.png) no-repeat center center / contain; //contain:縦横比保ったまま
     opacity: 0;
-  }
-
-  //チェックがついた時にafterの透過度を0->1にする
-  //checkedとform-checkbox__textは階層が同じなので+をつける
-  &:checked {
-    + .form-checkbox__text {
-      &::after {
-        opacity: 1;
-      }
-    }
   }
 }
