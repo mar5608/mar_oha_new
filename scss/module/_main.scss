@@ -1165,9 +1165,6 @@ movie
   gap: 30px; //縦並びのflexで縦の余白はgapで設定
 }
 
-.contact__field {
-}
-
 .form-field__head {
   display: flex;
   align-items: center;
@@ -1195,48 +1192,6 @@ movie
 
 .form-field__item {
   margin-top: 14px;
-
-  [type="radio"] {
-    // width: 1px;
-    // height: 1px;
-    // position: absolute; //浮かせてレイアウトとは関係ないようにする
-    // clip: rect(0, 0, 0, 0); //見えないようにする
-    // overflow: hidden;
-    // //display:noneにすると標準の機能が消えるので消さない
-
-    // //radioボタンにチェックがついた時にafterの透過度を0->1にする
-    // //checkedとform-field_radio-textは階層が同じなので+をつける
-    // &:checked {
-    //   + .form-field_radio-text {
-    //     &:after {
-    //       opacity: 1;
-    //     }
-    //   }
-    // }
-  }
-
-  // select {
-  //   appearance: none; /*標準のアイコンを消す*/
-  //   width: 100%;
-  //   border-radius: 5px;
-  //   border: 3px solid #111;
-  //   background: #fff;
-  //   font-weight: 700;
-  //   padding: 15px 46px 14px 16px;
-
-  //   //select要素では擬似要素が使えないので背景画像として利用する
-  //   background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px
-  //     10.182px;
-  // }
-
-  // textarea {
-  //   width: 100%;
-  //   height: 180px;
-  //   border-radius: 5px;
-  //   border: 3px solid #111;
-  //   background: #fff;
-  //   padding: 16px;
-  // }
 }
 
 .form-text {
@@ -1247,8 +1202,6 @@ movie
   padding: 15px 16px 14px;
 }
 
-.from-radio {
-}
 .from-radio__input {
   width: 1px;
   height: 1px;
@@ -1261,7 +1214,7 @@ movie
   //checkedとform-field_radio-textは階層が同じなので+をつける
   &:checked {
     + .from-radio__text {
-      &:after {
+      &::after {
         opacity: 1;
       }
     }
@@ -1301,6 +1254,7 @@ movie
   &::after {
     content: "";
     position: absolute;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
@@ -1310,7 +1264,7 @@ movie
     width: 24px;
     height: 24px;
     border: 3px solid #111;
-    left: 0;
+    // left: 0;
     transition: border-color 0.3s;
   }
 
@@ -1343,35 +1297,50 @@ movie
   gap: 16px;
 }
 
-// .form-field_radio-text {
-// font-weight: 700;
-// padding-left: 28px; //24+4px
-// position: relative;
+.form-checkbox {
+}
 
-// //form-field_radio-textを起点にして擬似要素を作っていく
-// &::before,
-// &::after {
-//   content: "";
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   border-radius: 50%;
-// }
+.from-checkbox__input {
+  width: 1px;
+  height: 1px;
+  position: absolute; //浮かせてレイアウトとは関係ないようにする
+  clip: rect(0, 0, 0, 0); //見えないようにする
+  overflow: hidden;
+  //display:noneにすると標準の機能が消えるので消さない
+}
 
-// &::before {
-//   width: 24px;
-//   height: 24px;
-//   border: 3px solid #111;
-//   left: 0;
-//   transition: border-color 0.3s;
-// }
+.from-checkbox__text {
+  position: relative;
+  padding-left: 30px;
 
-// //after 中のオレンジの丸
-// &::after {
-//   width: 10px;
-//   height: 10px;
-//   background: #f5810e;
-//   left: 7px;
-//   opacity: 0;
-// }
-// }
+  a {
+    // text-decoration: solid;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+  // 四角の部分
+  &::before {
+    width: 20px;
+    height: 20px;
+    border-radius: 1px;
+    border: 1px solid #111;
+
+    // transition: border-color 0.3s;
+  }
+
+  //after 中のチェックマーク
+  &::after {
+    width: 23px;
+    height: 17.53px;
+    left: -1px;
+    margin-top: -1.2px;
+    background: url(../../img/check-icon.png) no-repeat center center / contain; //contain:縦横比保ったまま
+  }
+}
