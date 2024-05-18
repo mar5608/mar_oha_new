@@ -1366,25 +1366,26 @@ movie
 .form-field__item {
   margin-top: 14px;
 }
-.form-field__item [type=text],
-.form-field__item [type=email] {
+.form-text {
   width: 100%;
   border-radius: 5px;
   border: 3px solid #000;
   background: #fff;
   padding: 15px 16px 14px;
 }
-.form-field__item [type=radio] {
+
+.from-radio__input {
   width: 1px;
   height: 1px;
   position: absolute;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
-.form-field__item [type=radio]:checked + .form-field_radio-text:after {
+.from-radio__input:checked + .from-radio__text:after {
   opacity: 1;
 }
-.form-field__item select {
+
+.form-select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none; /*標準のアイコンを消す*/
@@ -1396,13 +1397,43 @@ movie
   padding: 15px 46px 14px 16px;
   background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px 10.182px;
 }
-.form-field__item textarea {
+
+.form-textarea {
   width: 100%;
   height: 180px;
   border-radius: 5px;
   border: 3px solid #111;
   background: #fff;
   padding: 16px;
+}
+
+.from-radio__text {
+  font-weight: 700;
+  padding-left: 28px;
+  position: relative;
+}
+.from-radio__text::before, .from-radio__text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+}
+.from-radio__text::before {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #111;
+  left: 0;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.from-radio__text::after {
+  width: 10px;
+  height: 10px;
+  background: #f5810e;
+  left: 7px;
+  opacity: 0;
 }
 
 .contact__privacy {
@@ -1427,33 +1458,4 @@ movie
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 16px;
-}
-
-.form-field_radio-text {
-  font-weight: 700;
-  padding-left: 28px;
-  position: relative;
-}
-.form-field_radio-text::before, .form-field_radio-text::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border-radius: 50%;
-}
-.form-field_radio-text::before {
-  width: 24px;
-  height: 24px;
-  border: 3px solid #111;
-  left: 0;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
-}
-.form-field_radio-text::after {
-  width: 10px;
-  height: 10px;
-  background: #f5810e;
-  left: 7px;
-  opacity: 0;
 }

@@ -1196,79 +1196,102 @@ movie
 .form-field__item {
   margin-top: 14px;
 
-  //属性を指定する（typeがtextのもの）
-  [type="text"],
-  [type="email"] {
-    width: 100%;
-    border-radius: 5px;
-    border: 3px solid #000;
-    background: #fff;
-    padding: 15px 16px 14px;
+  [type="radio"] {
+    // width: 1px;
+    // height: 1px;
+    // position: absolute; //浮かせてレイアウトとは関係ないようにする
+    // clip: rect(0, 0, 0, 0); //見えないようにする
+    // overflow: hidden;
+    // //display:noneにすると標準の機能が消えるので消さない
+
+    // //radioボタンにチェックがついた時にafterの透過度を0->1にする
+    // //checkedとform-field_radio-textは階層が同じなので+をつける
+    // &:checked {
+    //   + .form-field_radio-text {
+    //     &:after {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
   }
 
-  [type="radio"] {
-    width: 1px;
-    height: 1px;
-    position: absolute; //浮かせてレイアウトとは関係ないようにする
-    clip: rect(0, 0, 0, 0); //見えないようにする
-    overflow: hidden;
-    //display:noneにすると標準の機能が消えるので消さない
+  // select {
+  //   appearance: none; /*標準のアイコンを消す*/
+  //   width: 100%;
+  //   border-radius: 5px;
+  //   border: 3px solid #111;
+  //   background: #fff;
+  //   font-weight: 700;
+  //   padding: 15px 46px 14px 16px;
 
-    //radioボタンにチェックがついた時にafterの透過度を0->1にする
-    //checkedとform-field_radio-textは階層が同じなので+をつける
-    &:checked {
-      + .form-field_radio-text {
-        &:after {
-          opacity: 1;
-        }
+  //   //select要素では擬似要素が使えないので背景画像として利用する
+  //   background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px
+  //     10.182px;
+  // }
+
+  // textarea {
+  //   width: 100%;
+  //   height: 180px;
+  //   border-radius: 5px;
+  //   border: 3px solid #111;
+  //   background: #fff;
+  //   padding: 16px;
+  // }
+}
+
+.form-text {
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid #000;
+  background: #fff;
+  padding: 15px 16px 14px;
+}
+
+.from-radio {
+}
+.from-radio__input {
+  width: 1px;
+  height: 1px;
+  position: absolute; //浮かせてレイアウトとは関係ないようにする
+  clip: rect(0, 0, 0, 0); //見えないようにする
+  overflow: hidden;
+  //display:noneにすると標準の機能が消えるので消さない
+
+  //radioボタンにチェックがついた時にafterの透過度を0->1にする
+  //checkedとform-field_radio-textは階層が同じなので+をつける
+  &:checked {
+    + .from-radio__text {
+      &:after {
+        opacity: 1;
       }
     }
   }
-
-  select {
-    appearance: none; /*標準のアイコンを消す*/
-    width: 100%;
-    border-radius: 5px;
-    border: 3px solid #111;
-    background: #fff;
-    font-weight: 700;
-    padding: 15px 46px 14px 16px;
-
-    //select要素では擬似要素が使えないので背景画像として利用する
-    background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px
-      10.182px;
-  }
-
-  textarea {
-    width: 100%;
-    height: 180px;
-    border-radius: 5px;
-    border: 3px solid #111;
-    background: #fff;
-    padding: 16px;
-  }
 }
 
-.contact__privacy {
-  margin-top: 30px;
+.form-select {
+  appearance: none; /*標準のアイコンを消す*/
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid #111;
+  background: #fff;
+  font-weight: 700;
+  padding: 15px 46px 14px 16px;
+
+  //select要素では擬似要素が使えないので背景画像として利用する
+  background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px
+    10.182px;
 }
 
-.contact__button {
-  margin-top: 30px;
-  @include mixin.mq(pc) {
-    margin-top: 38px;
-  }
+.form-textarea {
+  width: 100%;
+  height: 180px;
+  border-radius: 5px;
+  border: 3px solid #111;
+  background: #fff;
+  padding: 16px;
 }
 
-.form-field__item {
-}
-.form-filed__radios {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-field_radio-text {
+.from-radio__text {
   font-weight: 700;
   padding-left: 28px; //24+4px
   position: relative;
@@ -1299,8 +1322,56 @@ movie
     left: 7px;
     opacity: 0;
   }
-
-  // &:focus{
-
-  // }
 }
+
+.contact__privacy {
+  margin-top: 30px;
+}
+
+.contact__button {
+  margin-top: 30px;
+  @include mixin.mq(pc) {
+    margin-top: 38px;
+  }
+}
+
+.form-field__item {
+}
+.form-filed__radios {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// .form-field_radio-text {
+// font-weight: 700;
+// padding-left: 28px; //24+4px
+// position: relative;
+
+// //form-field_radio-textを起点にして擬似要素を作っていく
+// &::before,
+// &::after {
+//   content: "";
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   border-radius: 50%;
+// }
+
+// &::before {
+//   width: 24px;
+//   height: 24px;
+//   border: 3px solid #111;
+//   left: 0;
+//   transition: border-color 0.3s;
+// }
+
+// //after 中のオレンジの丸
+// &::after {
+//   width: 10px;
+//   height: 10px;
+//   background: #f5810e;
+//   left: 7px;
+//   opacity: 0;
+// }
+// }
