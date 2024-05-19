@@ -1147,8 +1147,8 @@ movie
   background: #fff;
   padding: 60px 20px;
   @include mixin.mq(pc) {
-    padding-left: 264px;
-    padding-right: 264px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -1159,6 +1159,9 @@ movie
   margin-top: 30px;
   @include mixin.mq(pc) {
     margin-top: 50px;
+    max-width: 612px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1188,6 +1191,7 @@ movie
 
 .form-field__label {
   font-weight: 700;
+  line-height: calc(23 / 16); //23px
 }
 
 .form-field__tag {
@@ -1216,9 +1220,12 @@ movie
   border-radius: 5px;
   border: 3px solid #000;
   background: #fff;
-  padding: 15px 16px 14px;
+  padding: calc(15px - 3px) calc(16px - 3px) calc(14px - 3px);
 }
 
+.form-radio {
+  line-height: calc(23 / 16); //23px
+}
 .form-radio__input {
   width: 1px;
   height: 1px;
@@ -1245,10 +1252,11 @@ movie
   border: 3px solid #111;
   background: #fff;
   font-weight: 700;
-  padding: 15px 46px 14px 16px;
+  // padding: 15px 46px 14px 16px;
+  padding: calc(15px - 3px) calc(46px - 3px) calc(14px - 3px) calc(16px - 3px);
 
   //select要素では擬似要素が使えないので背景画像として利用する
-  background: url(../../img/select-arrow.png) no-repeat center right 16px/13.217px
+  background: url(../../img/select-arrow.png) no-repeat center right 14px/13.217px
     10.182px;
 }
 
@@ -1258,7 +1266,7 @@ movie
   border-radius: 5px;
   border: 3px solid #111;
   background: #fff;
-  padding: 16px;
+  padding: calc(16px - 3px);
 }
 
 .form-radio__text {
@@ -1296,12 +1304,12 @@ movie
 }
 
 .contact__privacy {
-  margin-top: 30px;
+  margin-top: 28px;
   text-align: center;
 }
 
 .contact__button {
-  margin-top: 30px;
+  margin-top: 29px;
   text-align: center; //親要素に中央寄せをかく
   @include mixin.mq(pc) {
     margin-top: 38px;
@@ -1309,7 +1317,7 @@ movie
 }
 
 .form-field__item {
-  margin-top: 14px;
+  margin-top: 15px;
   flex-grow: 1;
   @include mixin.mq(pc) {
     margin-top: 0;
@@ -1318,7 +1326,8 @@ movie
 .form-filed__radios {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 17px;
+
   @include mixin.mq(pc) {
     flex-direction: row; //横並びにする
     gap: 30px;
@@ -1385,5 +1394,8 @@ movie
     margin-top: -1.2px;
     background: url(../../img/check-icon.png) no-repeat center center / contain; //contain:縦横比保ったまま
     opacity: 0;
+    @include mixin.mq(pc) {
+      margin-top: 2px;
+    }
   }
 }
