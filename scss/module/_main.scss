@@ -1004,6 +1004,9 @@ movie
     // background: linear-gradient(to bottom, #4169e1 50%, #c71585);
     background: #fabe00;
     border-radius: 20px;
+    @include mixin.mq(pc) {
+      display: none;
+    }
   }
 
   @include mixin.mq(pc) {
@@ -1165,10 +1168,22 @@ movie
   gap: 30px; //縦並びのflexで縦の余白はgapで設定
 }
 
+.form-field {
+  @include mixin.mq(pc) {
+    display: flex; //横並び
+    gap: 32px; //フォームの左の余白
+  }
+}
+
 .form-field__head {
   display: flex;
   align-items: center;
   gap: 10px;
+  @include mixin.mq(pc) {
+    width: calc(212px - 32px);
+    flex-shrink: 0; //これ以上縮めないで　＊flexが自動で縮めることがあるので明示しておく
+    justify-content: flex-end;
+  }
 }
 
 .form-field__label {
@@ -1179,8 +1194,9 @@ movie
   display: inline-block;
   border-radius: 2px;
   background: #ee8013;
-  padding: 6px 9px 5px 9px;
+  padding: 6px 8px 5px 8px;
   color: #fff;
+  font-size: 11px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 1.98px;
@@ -1192,6 +1208,7 @@ movie
 
 .form-field__item {
   margin-top: 14px;
+  flex-grow: 1; //残りの幅全てに当てててください
 }
 
 .form-text {
@@ -1285,17 +1302,27 @@ movie
 
 .contact__button {
   margin-top: 30px;
+  text-align: center; //親要素に中央寄せをかく
   @include mixin.mq(pc) {
     margin-top: 38px;
   }
 }
 
 .form-field__item {
+  margin-top: 14px;
+  flex-grow: 1;
+  @include mixin.mq(pc) {
+    margin-top: 0;
+  }
 }
 .form-filed__radios {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @include mixin.mq(pc) {
+    flex-direction: row; //横並びにする
+    gap: 30px;
+  }
 }
 
 .form-checkbox {
@@ -1329,7 +1356,7 @@ movie
 
   a {
     text-decoration-line: underline;
-    font-weight: 700;
+    font-weight: inherit; //子要素のCSSの値を親要素と同じにしたい場合は、継承を表す「inherit」
   }
   &::before,
   &::after {
