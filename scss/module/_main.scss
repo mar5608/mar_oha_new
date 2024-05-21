@@ -30,6 +30,12 @@ body {
   }
 }
 
+/*囲った行単位で改行される*/
+.inline-block {
+  font-weight: inherit; /*親要素から継承*/
+  display: inline-block;
+}
+
 .inner {
   padding-left: 15px;
   padding-right: 15px;
@@ -957,6 +963,33 @@ movie
     font-size: 15px;
   }
 }
+/*----------------------------------
+    cta
+-----------------------------------*/
+.cta {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: color.$color-gradation;
+  text-align: center;
+  @include mixin.mq(pc) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.cta__text {
+  font-weight: 700;
+  line-height: 200%; /* 32px */
+  letter-spacing: 0.48px;
+  @include mixin.mq(pc) {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+
+.cta__button {
+  margin-top: 16px;
+}
 
 /*----------------------------------
     compare
@@ -1131,7 +1164,7 @@ movie
 -----------------------------------*/
 .contact {
   padding-top: 60px;
-  padding-bottom: 78px;
+  padding-bottom: 60px;
   background: url(../../img/section-bg.png) repeat top left;
   @include mixin.mq(pc) {
     padding-top: 100px;
@@ -1397,5 +1430,45 @@ movie
     @include mixin.mq(pc) {
       margin-top: 2px;
     }
+  }
+}
+
+/*----------------------------------
+    footer
+-----------------------------------*/
+.footer {
+  background: #111;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.footer__inner {
+}
+
+.inner {
+}
+
+.footer__copyright {
+  color: #f5f5f5;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0.96px;
+}
+
+.pagetop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  // width: calc(50 / 375 * 100%);
+  width: min(calc(50 / 375 * 100%), 50px); /*最大50pxまで*/
+
+  @include mixin.mq(pc) {
+    width: 76px;
+    right: 16px;
+    bottom: 30px;
+  }
+  img {
   }
 }
