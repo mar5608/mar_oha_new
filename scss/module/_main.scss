@@ -487,7 +487,7 @@ news
     display: inline-block;
     font-weight: 700;
     line-height: 1; /* 16px */
-    border-bottom: 2px solid currentColor;//hover時
+    border-bottom: 2px solid currentColor; //hover時
     padding-bottom: calc(10px - 2px);
     vertical-align: top;
     transition: color 0.3s;
@@ -1281,10 +1281,26 @@ movie
   border: 3px solid #000;
   background: #fff;
   padding: calc(15px - 3px) calc(16px - 3px) calc(14px - 3px);
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: color.$color-key2;
+    outline: none; /* デフォルトの青いラインを消す */
+  }
 }
 
 .form-radio {
   line-height: calc(23 / 16); //23px
+  &:hover {
+    /* hoverが当たるところ */
+    .form-radio__text {
+      &::before {
+        /*切り替わるところ*/
+        border-color: color.$color-key2;
+      }
+    }
+  }
 }
 .form-radio__input {
   width: 1px;
@@ -1303,6 +1319,15 @@ movie
       }
     }
   }
+
+  &:focus {
+    + .form-radio__text {
+      &::before {
+        /*切り替わるところ*/
+        border-color: color.$color-key2;
+      }
+    }
+  }
 }
 
 .form-select {
@@ -1318,6 +1343,14 @@ movie
   //select要素では擬似要素が使えないので背景画像として利用する
   background: url(../../img/select-arrow.png) no-repeat center right 14px/13.217px
     10.182px;
+
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: color.$color-key2;
+    outline: none; /* デフォルトの青いラインを消す */
+  }
 }
 
 .form-textarea {
@@ -1327,6 +1360,13 @@ movie
   border: 3px solid #111;
   background: #fff;
   padding: calc(16px - 3px);
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: color.$color-key2;
+    outline: none; /* デフォルトの青いラインを消す */
+  }
 }
 
 .form-radio__text {
@@ -1350,7 +1390,7 @@ movie
     height: 24px;
     border: 3px solid #111;
     // left: 0;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s; /*hover時 ○はbeforeで作成されているのでここ*/
   }
 
   //after 中のオレンジの丸
@@ -1395,6 +1435,13 @@ movie
 }
 
 .form-checkbox {
+  &:hover {
+    .form-checkbox__text {
+      &::before {
+        border-color: color.$color-key2;
+      }
+    }
+  }
 }
 
 .form-checkbox__input {
@@ -1414,6 +1461,14 @@ movie
       }
     }
   }
+
+  &:focus {
+    + .form-checkbox__text {
+      &::before {
+        border-color: color.$color-key2;
+      }
+    }
+  }
 }
 
 .form-checkbox__text {
@@ -1426,6 +1481,11 @@ movie
   a {
     text-decoration-line: underline;
     font-weight: inherit; //子要素のCSSの値を親要素と同じにしたい場合は、継承を表す「inherit」
+    transition: color 0.3s;
+
+    &:hover {
+      color: color.$color-key1;
+    }
   }
   &::before,
   &::after {
@@ -1443,7 +1503,7 @@ movie
     border-radius: 1px;
     border: 1px solid #111;
 
-    // transition: border-color 0.3s;
+    transition: border-color 0.3s;
   }
 
   //after 中のチェックマーク

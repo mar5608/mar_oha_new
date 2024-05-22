@@ -1471,10 +1471,23 @@ movie
   border: 3px solid #000;
   background: #fff;
   padding: 12px 13px 11px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.form-text:hover, .form-text:focus {
+  border-color: #fabe00;
+  outline: none; /* デフォルトの青いラインを消す */
 }
 
 .form-radio {
   line-height: 1.4375;
+}
+.form-radio:hover {
+  /* hoverが当たるところ */
+}
+.form-radio:hover .form-radio__text::before {
+  /*切り替わるところ*/
+  border-color: #fabe00;
 }
 
 .form-radio__input {
@@ -1486,6 +1499,10 @@ movie
 }
 .form-radio__input:checked + .form-radio__text::after {
   opacity: 1;
+}
+.form-radio__input:focus + .form-radio__text::before {
+  /*切り替わるところ*/
+  border-color: #fabe00;
 }
 
 .form-select {
@@ -1499,6 +1516,12 @@ movie
   font-weight: 700;
   padding: 12px 43px 11px 13px;
   background: url(../../img/select-arrow.png) no-repeat center right 14px/13.217px 10.182px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.form-select:hover, .form-select:focus {
+  border-color: #fabe00;
+  outline: none; /* デフォルトの青いラインを消す */
 }
 
 .form-textarea {
@@ -1508,6 +1531,12 @@ movie
   border: 3px solid #111;
   background: #fff;
   padding: 13px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.form-textarea:hover, .form-textarea:focus {
+  border-color: #fabe00;
+  outline: none; /* デフォルトの青いラインを消す */
 }
 
 .form-radio__text {
@@ -1529,7 +1558,7 @@ movie
   height: 24px;
   border: 3px solid #111;
   -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s; /*hover時 ○はbeforeで作成されているのでここ*/
 }
 .form-radio__text::after {
   width: 10px;
@@ -1586,6 +1615,10 @@ movie
   }
 }
 
+.form-checkbox:hover .form-checkbox__text::before {
+  border-color: #fabe00;
+}
+
 .form-checkbox__input {
   width: 1px;
   height: 1px;
@@ -1595,6 +1628,9 @@ movie
 }
 .form-checkbox__input:checked + .form-checkbox__text::after {
   opacity: 1;
+}
+.form-checkbox__input:focus + .form-checkbox__text::before {
+  border-color: #fabe00;
 }
 
 .form-checkbox__text {
@@ -1607,6 +1643,11 @@ movie
 .form-checkbox__text a {
   text-decoration-line: underline;
   font-weight: inherit;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.form-checkbox__text a:hover {
+  color: #f5810e;
 }
 .form-checkbox__text::before, .form-checkbox__text::after {
   content: "";
@@ -1622,6 +1663,8 @@ movie
   height: 20px;
   border-radius: 1px;
   border: 1px solid #111;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
 }
 .form-checkbox__text::after {
   width: 23px;
