@@ -162,8 +162,8 @@ body {
   color: #111;
   min-width: 150px;
   text-align: center;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s; /* hoverする前のクラスにつける*/
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* hoverする前のクラスにつける*/
   /* ホバー */
 }
 .button:hover {
@@ -172,6 +172,11 @@ body {
 .button--type2 {
   background-color: #111;
   color: #fff;
+  /* ホバー */
+}
+.button--type2:hover {
+  background-color: #fff;
+  color: #111;
 }
 
 .title {
@@ -559,6 +564,8 @@ news
   gap: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 @media screen and (min-width: 768px) {
   .news-link {
@@ -570,6 +577,9 @@ news
     padding-bottom: 12px;
     gap: 0;
   }
+}
+.news-link:hover {
+  background: #fff9e5;
 }
 
 .news__link {
@@ -585,9 +595,14 @@ news
   display: inline-block;
   font-weight: 700;
   line-height: 1; /* 16px */
-  border-bottom: 2px solid #111;
+  border-bottom: 2px solid currentColor;
   padding-bottom: 8px;
   vertical-align: top;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.news__link a:hover {
+  color: #f5810e;
 }
 
 .news__link-meta {

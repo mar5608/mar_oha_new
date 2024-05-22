@@ -59,7 +59,7 @@ body {
   color: color.$color-base;
   min-width: 150px;
   text-align: center;
-  transition: background-color 0.3s; /* hoverする前のクラスにつける*/
+  transition: background-color 0.3s, color 0.3s; /* hoverする前のクラスにつける*/
 
   /* ホバー */
   &:hover {
@@ -70,6 +70,11 @@ body {
     // border-color: #fff;
     background-color: #111;
     color: #fff;
+    /* ホバー */
+    &:hover {
+      background-color: color.$color-base-white;
+      color: color.$color-base;
+    }
   }
 }
 
@@ -458,11 +463,16 @@ news
   gap: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: background-color 0.3s;
   @include mixin.mq(pc) {
     flex-direction: row;
     padding-top: 12px;
     padding-bottom: 12px;
     gap: 0;
+  }
+
+  &:hover {
+    background: #fff9e5;
   }
 }
 
@@ -477,9 +487,14 @@ news
     display: inline-block;
     font-weight: 700;
     line-height: 1; /* 16px */
-    border-bottom: 2px solid #111;
+    border-bottom: 2px solid currentColor;//hover時
     padding-bottom: calc(10px - 2px);
     vertical-align: top;
+    transition: color 0.3s;
+
+    &:hover {
+      color: color.$color-key1;
+    }
   }
 }
 
