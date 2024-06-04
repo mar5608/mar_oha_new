@@ -1512,16 +1512,13 @@ movie
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.12px;
-  text-indent: 1.12px;
-  -moz-text-align-last: left;
-       text-align-last: left;
+  text-align: left;
 }
 @media screen and (min-width: 768px) {
   .qa-box__head-text {
     font-size: 16px;
     line-height: 27px; /* 168.75% */
     letter-spacing: 1.28px;
-    text-indent: 1.28px;
   }
 }
 

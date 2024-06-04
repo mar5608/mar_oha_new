@@ -1344,13 +1344,11 @@ movie
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.12px;
-  text-indent: 1.12px; //★自分で追加
-  text-align-last: left;
+  text-align: left;
   @include mixin.mq(pc) {
     font-size: 16px;
     line-height: 27px; /* 168.75% */
     letter-spacing: 1.28px;
-    text-indent: 1.28px; //★自分で追加
   }
 }
 
