@@ -28,13 +28,26 @@
           <a href="" class="header__button button">お問い合わせ</a>
         </nav>
         <!-- ハンバーガーメニュー バーツ -->
-        <button class="header__open drawer-icon">
+        <button id="js-drawer-icon" class="header__open drawer-icon">
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
         </button>
       </div>
     </header>
+    <!-- ドロワーの部分 -->
+    <div id="js-drawer-content" class="drawer-content">
+      <nav class="drawer-content__menu">
+        <a href="" class="drawer-content__link">サービスについて</a>
+        <a href="" class="drawer-content__link">使い方</a>
+        <a href="" class="drawer-content__link">メリット</a>
+        <div class="drawer-content__button">
+          <a href="" class="button">お問い合わせ</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- mv -->
     <div class="mv">
       <div class="mv__inner">
         <div class="mv__content">
@@ -600,6 +613,7 @@
     </footer>
 
     <a href="" class="pagetop"><img src="./img/pagetop-img.png" alt="" /></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
