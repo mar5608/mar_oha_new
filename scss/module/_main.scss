@@ -230,12 +230,11 @@ body {
   background: #f7ba1a;
   z-index: 50;
   padding: 86px 40px 40px;
-  transform: translateX(100%);//コンテンツ分が100%移動
+  transform: translateX(100%); //コンテンツ分が100%移動
   transition: transform 0.3s linear;
-  &.is-checked{
+  &.is-checked {
     transform: translateX(0);
   }
-
 }
 
 .drawer-content__menu {
@@ -1238,6 +1237,168 @@ movie
   text-align: center;
   @include mixin.mq(pc) {
     display: none;
+  }
+}
+
+/*----------------------------------
+    qa
+-----------------------------------*/
+.qa {
+  padding-top: 60px;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.qa_inner {
+  max-width: calc(800px + 30px * 2);
+  padding-left: 3px;
+  padding-right: 30px;
+  @include mixin.mq(pc) {
+  }
+}
+
+.qa__title {
+}
+
+.qa__boxes {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  @include mixin.mq(pc) {
+    margin-top: 74px;
+  }
+}
+
+.qa__box {
+}
+
+.qa-box {
+  border-radius: 10px;
+  border: 3px solid #111;
+  background: #fff;
+  &.is-open {
+    .qa-box__head {
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    .qa-box__body {
+      display: block;
+    }
+  }
+}
+
+.qa-box__head {
+  padding: 32px 40px 20px 15px;
+  position: relative;
+  width: 100%;
+  @include mixin.mq(pc) {
+    padding: 32px 80px 20px 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    //アイコンを入れるエリア
+    width: 9.26px;
+    height: 6.834px;
+    background: url("../../img/qa_arrow.png") no-repeat center center / contain;
+    transform: rotate(180deg);
+
+    @include mixin.mq(pc) {
+      right: 22px;
+    }
+  }
+}
+
+.qa-box__head-icon {
+  font-family: config.$font-family-en;
+  font-size: 22px;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  // letter-spacing: 2.2px;
+  border-radius: 22px;
+  border: 3px solid #111;
+  background: #f5810e;
+
+  display: grid;
+  place-items: center;
+
+  position: absolute;
+  top: -22px;
+  left: 15px;
+  @include mixin.mq(pc) {
+    left: 20px;
+  }
+}
+
+.qa-box__head-text {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+  text-indent: 1.12px; //★自分で追加
+  text-align-last: left;
+  @include mixin.mq(pc) {
+    font-size: 16px;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 1.28px;
+    text-indent: 1.28px; //★自分で追加
+  }
+}
+
+.qa-box__body {
+  padding: 10px 17px 20px 15px;
+  display: none;
+  @include mixin.mq(pc) {
+    padding: 0 36px 20px 20px;
+  }
+}
+
+.qa-box__a {
+  display: flex; //contentsの量で伸び縮みしてしまう
+  gap: 8px;
+  @include mixin.mq(pc) {
+    gap: 10px;
+  }
+}
+
+.qa-box__a-icon {
+  font-family: config.$font-family-en;
+  font-size: 22px;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  // letter-spacing: 2.2px;
+  // text-indent: 2.2px;//letter-spacingでずれた分調整する
+  border-radius: 22px;
+  border: 3px solid #111;
+  background: #fabe00;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0; //縮めないで
+  @include mixin.mq(pc) {
+  }
+}
+
+.qa-box__a-text {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  flex-grow: 1; //どこまでも伸びてOK
+  padding-top: 12px;
+  @include mixin.mq(pc) {
+    font-size: 16px;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 1.28px;
+    padding-top: 10px;
   }
 }
 

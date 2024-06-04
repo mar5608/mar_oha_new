@@ -1412,6 +1412,174 @@ movie
 }
 
 /*----------------------------------
+    qa
+-----------------------------------*/
+.qa {
+  padding-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .qa {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.qa_inner {
+  max-width: 860px;
+  padding-left: 3px;
+  padding-right: 30px;
+}
+.qa__boxes {
+  margin-top: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 42px;
+}
+@media screen and (min-width: 768px) {
+  .qa__boxes {
+    margin-top: 74px;
+  }
+}
+
+.qa-box {
+  border-radius: 10px;
+  border: 3px solid #111;
+  background: #fff;
+}
+.qa-box.is-open .qa-box__head::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.qa-box.is-open .qa-box__body {
+  display: block;
+}
+
+.qa-box__head {
+  padding: 32px 40px 20px 15px;
+  position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__head {
+    padding: 32px 80px 20px 20px;
+  }
+}
+.qa-box__head::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 9.26px;
+  height: 6.834px;
+  background: url("../../img/qa_arrow.png") no-repeat center center/contain;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+@media screen and (min-width: 768px) {
+  .qa-box__head::after {
+    right: 22px;
+  }
+}
+
+.qa-box__head-icon {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 3px solid #111;
+  background: #f5810e;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: -22px;
+  left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__head-icon {
+    left: 20px;
+  }
+}
+
+.qa-box__head-text {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.12px;
+  text-indent: 1.12px;
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__head-text {
+    font-size: 16px;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 1.28px;
+    text-indent: 1.28px;
+  }
+}
+
+.qa-box__body {
+  padding: 10px 17px 20px 15px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__body {
+    padding: 0 36px 20px 20px;
+  }
+}
+
+.qa-box__a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__a {
+    gap: 10px;
+  }
+}
+
+.qa-box__a-icon {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 3px solid #111;
+  background: #fabe00;
+  display: grid;
+  place-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.qa-box__a-text {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-top: 12px;
+}
+@media screen and (min-width: 768px) {
+  .qa-box__a-text {
+    font-size: 16px;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 1.28px;
+    padding-top: 10px;
+  }
+}
+
+/*----------------------------------
     contact
 -----------------------------------*/
 .contact {
