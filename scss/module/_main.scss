@@ -1252,10 +1252,10 @@ movie
 }
 
 .qa_inner {
-  max-width: calc(800px + 30px * 2);
-  padding-left: 3px;
-  padding-right: 30px;
   @include mixin.mq(pc) {
+    max-width: calc(800px + 30px * 2);
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -1293,11 +1293,11 @@ movie
 }
 
 .qa-box__head {
-  padding: 32px 40px 20px 15px;
+  padding: calc(32px - 3px) calc(40px - 3px) calc(20px - 3px) calc(15px - 3px);
   position: relative;
   width: 100%;
   @include mixin.mq(pc) {
-    padding: 32px 80px 20px 20px;
+    padding: calc(32px - 3px) calc(80px - 3px) calc(20px - 3px) calc(20px - 3px);
   }
 
   &::after {
@@ -1312,7 +1312,8 @@ movie
     transform: rotate(180deg);
 
     @include mixin.mq(pc) {
-      right: 22px;
+      right: 18px;
+      margin-top: 2px;
     }
   }
 }
@@ -1332,10 +1333,10 @@ movie
   place-items: center;
 
   position: absolute;
-  top: -22px;
-  left: 15px;
+  top: -26px;
+  left: 12px;
   @include mixin.mq(pc) {
-    left: 20px;
+    left: 17px;
   }
 }
 
@@ -1353,10 +1354,10 @@ movie
 }
 
 .qa-box__body {
-  padding: 10px 17px 20px 15px;
+  padding: calc(10px + 3px) calc(17px - 3px) calc(20px - 3px) calc(15px - 3px);
   display: none;
   @include mixin.mq(pc) {
-    padding: 0 36px 20px 20px;
+    padding: 3px calc(36px - 3px) calc(20px - 3px) calc(20px - 3px);
   }
 }
 
@@ -1391,12 +1392,12 @@ movie
   font-size: 14px;
   font-weight: 700;
   flex-grow: 1; //どこまでも伸びてOK
-  padding-top: 12px;
+  letter-spacing: 1.28px;
+  padding-top: 10px;
   @include mixin.mq(pc) {
     font-size: 16px;
     line-height: 27px; /* 168.75% */
-    letter-spacing: 1.28px;
-    padding-top: 10px;
+    padding-top: 7px;
   }
 }
 
