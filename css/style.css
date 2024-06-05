@@ -1458,9 +1458,6 @@ movie
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.qa-box.is-open .qa-box__body {
-  display: block;
-}
 
 .qa-box__head {
   padding: 29px 37px 17px 12px;
