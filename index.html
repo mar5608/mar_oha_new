@@ -322,26 +322,6 @@
       </div>
     </section>
 
-    <!-- Slider main container -->
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
-    </div>
     <!-- merit -->
     <section class="merit">
       <div class="merit__inner inner">
@@ -413,7 +393,7 @@
                     </div>
                   </h3>
                   <p class="merit-box__text">
-                    自分が隠したへそくりを自分が発見するのはプラスマイナス0ですが、なんだか嬉しいものですよね。過去の自分よ、素敵なサプライズをありがとう。
+                    自分が隠したへそくりを自分が発見するのはプラスマイナス0ですが、なんだか嬉しいものですよね。過去の自分よ、素敵なサプライズをありがとう。<br />
                     へそくりをしたことがない方にとっては申し訳ないですがこのイベントは起こりませんのでアプリ使用の再検討をおすすめします。
                   </p>
                 </div>
@@ -546,7 +526,7 @@
         </div>
         <div class="gallery__slider">
           <!-- Slider main container -->
-          <div class="swiper gallery__swiper">
+          <div id="js-gallery-swiper" class="swiper gallery__swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
@@ -580,10 +560,19 @@
               </div>
             </div>
             <!-- If we need pagination -->
-            <div class="swiper-pagination gallery__pagination"></div>
+            <div
+              id="js-gallery-pagination"
+              class="swiper-pagination gallery__pagination"
+            ></div>
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev gallery__prev"></div>
-            <div class="swiper-button-next gallery__next"></div>
+            <div
+              id="js-gallery-prev"
+              class="swiper-button-prev gallery__prev"
+            ></div>
+            <div
+              id="js-gallery-next"
+              class="swiper-button-next gallery__next"
+            ></div>
           </div>
         </div>
       </div>

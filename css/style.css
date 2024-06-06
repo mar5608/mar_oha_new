@@ -1070,7 +1070,7 @@ movie
 @media screen and (min-width: 768px) {
   .merit {
     padding-top: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 110px;
   }
 }
 
@@ -1088,7 +1088,7 @@ movie
 @media screen and (min-width: 768px) {
   .merit__boxes {
     gap: 40px;
-    margin-top: 50px;
+    margin-top: 52px;
   }
 }
 
@@ -1153,6 +1153,7 @@ movie
 @media screen and (min-width: 768px) {
   .merit-box__body {
     width: 56.5217391304%;
+    margin-top: 16px;
   }
 }
 
@@ -1199,6 +1200,7 @@ movie
 }
 @media screen and (min-width: 768px) {
   .merit-box__text {
+    margin-top: 18px;
     color: #111;
     font-size: 15px;
   }
@@ -1398,7 +1400,7 @@ movie
 }
 
 .compare__attention {
-  margin-top: 11px;
+  margin-top: 6px;
   color: #686868;
   font-size: 14px;
   font-weight: 700;
@@ -1416,10 +1418,11 @@ movie
 -----------------------------------*/
 .qa {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 @media screen and (min-width: 768px) {
   .qa {
-    padding-top: 100px;
+    padding-top: 60px;
     padding-bottom: 100px;
   }
 }
@@ -1580,12 +1583,48 @@ movie
 /*----------------------------------
     gallery
 -----------------------------------*/
+.gallery {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gallery__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 860px;
+  }
+}
+
 .gallery__slider {
   margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__slider {
+    margin-top: 60px;
+  }
 }
 
 .gallery__swiper {
   padding-bottom: 26px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__swiper {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .gallery__card {
@@ -1594,17 +1633,34 @@ movie
   background: #fff;
   -webkit-box-shadow: 0px 9px 30px 0px #f4f4f4;
           box-shadow: 0px 9px 30px 0px #f4f4f4;
-  padding: 15px 15px 12px 15px;
+  padding: 12px 12px 9px 12px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__card {
+    border-radius: 30px;
+    padding: 17px 17px 15px 17px;
+  }
 }
 
 .gallery__card__image img {
   border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__card__image img {
+    border-radius: 20px;
+  }
 }
 
 .gallery__text {
   margin-top: 11px;
   text-align: center;
   font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__text {
+    margin-top: 18px;
+    font-size: 16px;
+  }
 }
 
 .gallery__pagination {
@@ -1627,6 +1683,47 @@ movie
 }
 .gallery__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #fabe00;
+}
+
+.gallery__prev,
+.gallery__next {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__prev,
+  .gallery__next {
+    width: 50px;
+    height: 50px;
+  }
+}
+.gallery__prev::after,
+.gallery__next::after {
+  display: none;
+}
+
+.gallery__prev {
+  margin-top: -38px;
+  left: 0;
+  background: url("../../img/prev-icon.png") no-repeat center center/contain;
+}
+@media screen and (min-width: 768px) {
+  .gallery__prev {
+    margin-top: -60px;
+    left: 10;
+  }
+}
+
+.gallery__next {
+  margin-top: -38px;
+  right: 0;
+  background: url("../../img/next-icon.png") no-repeat center center/contain;
+}
+@media screen and (min-width: 768px) {
+  .gallery__next {
+    margin-top: -60px;
+    right: 10;
+  }
 }
 
 /*----------------------------------

@@ -37,23 +37,19 @@ jQuery(".js-accordion").on("click", function (e) {
 // }
 
 /**  swiper */
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper("#js-gallery-swiper", {
+  spaceBetween: 82, //横のカードとの間
   // Optional parameters
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: ".swiper-pagination",
+    el: "#js-gallery-pagination",
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
+    nextEl: "#js-gallery-next",
+    prevEl: "#js-gallery-prev",
   },
 });

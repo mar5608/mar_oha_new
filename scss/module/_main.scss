@@ -943,7 +943,7 @@ movie
   padding-bottom: 60px;
   @include mixin.mq(pc) {
     padding-top: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 110px;
   }
 }
 
@@ -954,7 +954,7 @@ movie
   gap: 30px;
   @include mixin.mq(pc) {
     gap: 40px;
-    margin-top: 50px;
+    margin-top: 52px;
   }
 }
 
@@ -1002,6 +1002,7 @@ movie
   margin-top: 18px;
   @include mixin.mq(pc) {
     width: calc(520 / 920 * 100%);
+    margin-top: 16px;
   }
 }
 
@@ -1040,6 +1041,7 @@ movie
   font-size: 14px;
   line-height: 2; /* 28px */
   @include mixin.mq(pc) {
+    margin-top: 18px;
     color: #111;
     font-size: 15px;
   }
@@ -1229,7 +1231,7 @@ movie
 }
 
 .compare__attention {
-  margin-top: 11px;
+  margin-top: 6px;
   color: #686868;
   font-size: 14px;
   font-weight: 700;
@@ -1245,8 +1247,9 @@ movie
 -----------------------------------*/
 .qa {
   padding-top: 60px;
+  padding-bottom: 60px;
   @include mixin.mq(pc) {
-    padding-top: 100px;
+    padding-top: 60px;
     padding-bottom: 100px;
   }
 }
@@ -1406,9 +1409,20 @@ movie
 -----------------------------------*/
 
 .gallery {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include mixin.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .gallery__inner {
+  @include mixin.mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: calc(800px + 30px * 2);
+  }
 }
 
 .gallery__title {
@@ -1416,6 +1430,9 @@ movie
 
 .gallery__slider {
   margin-top: 30px;
+  @include mixin.mq(pc) {
+    margin-top: 60px;
+  }
 }
 
 .swiper {
@@ -1423,6 +1440,16 @@ movie
 
 .gallery__swiper {
   padding-bottom: 26px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+  @include mixin.mq(pc) {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .swiper-wrapper {
@@ -1439,12 +1466,19 @@ movie
   border: 3px solid #111;
   background: #fff;
   box-shadow: 0px 9px 30px 0px #f4f4f4;
-  padding: 15px 15px 12px 15px;
+  padding: calc(15px - 3px) calc(15px - 3px) calc(12px - 3px) calc(15px - 3px);
+  @include mixin.mq(pc) {
+    border-radius: 30px;
+    padding: calc(20px - 3px) calc(20px - 3px) calc(18px - 3px) calc(20px - 3px);
+  }
 }
 
 .gallery__card__image {
   img {
     border-radius: 10px;
+    @include mixin.mq(pc) {
+      border-radius: 20px;
+    }
   }
 }
 
@@ -1452,6 +1486,10 @@ movie
   margin-top: 11px;
   text-align: center;
   font-size: 14px;
+  @include mixin.mq(pc) {
+    margin-top: 18px;
+    font-size: 16px;
+  }
 }
 
 .gallery__pagination {
@@ -1471,6 +1509,37 @@ movie
     &.swiper-pagination-bullet-active {
       background: #fabe00;
     }
+  }
+}
+
+.gallery__prev,
+.gallery__next {
+  width: 40px;
+  height: 40px;
+  @include mixin.mq(pc) {
+    width: 50px;
+    height: 50px;
+  }
+  &::after {
+    display: none;
+  }
+}
+.gallery__prev {
+  margin-top: -38px;
+  left: 0;
+  background: url("../../img/prev-icon.png") no-repeat center center / contain;
+  @include mixin.mq(pc) {
+    margin-top: -60px;
+    left: 10;
+  }
+}
+.gallery__next {
+  margin-top: -38px;
+  right: 0;
+  background: url("../../img/next-icon.png") no-repeat center center / contain;
+  @include mixin.mq(pc) {
+    margin-top: -60px;
+    right: 10;
   }
 }
 
