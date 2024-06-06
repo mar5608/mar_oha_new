@@ -21,7 +21,7 @@ jQuery(".js-accordion").on("click", function (e) {
   }
 });
 
-/* JavaScript */
+/** JavaScript */
 
 // const drawerIcon = document.querySelector("#js-drawer-icon");
 // const drawerContent = document.querySelector("#js-drawer-content");
@@ -35,3 +35,25 @@ jQuery(".js-accordion").on("click", function (e) {
 //     drawerContent.classList.toggle("is-checked");
 //   });
 // }
+
+/**  swiper */
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});

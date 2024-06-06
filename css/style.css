@@ -1578,6 +1578,58 @@ movie
 }
 
 /*----------------------------------
+    gallery
+-----------------------------------*/
+.gallery__slider {
+  margin-top: 30px;
+}
+
+.gallery__swiper {
+  padding-bottom: 26px;
+}
+
+.gallery__card {
+  border-radius: 20px;
+  border: 3px solid #111;
+  background: #fff;
+  -webkit-box-shadow: 0px 9px 30px 0px #f4f4f4;
+          box-shadow: 0px 9px 30px 0px #f4f4f4;
+  padding: 15px 15px 12px 15px;
+}
+
+.gallery__card__image img {
+  border-radius: 10px;
+}
+
+.gallery__text {
+  margin-top: 11px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.gallery__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  bottom: 0 !important;
+}
+.gallery__pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  opacity: 1;
+  background: #bcbcbc;
+}
+.gallery__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fabe00;
+}
+
+/*----------------------------------
     contact
 -----------------------------------*/
 .contact {

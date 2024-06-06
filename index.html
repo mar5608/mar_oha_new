@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+    <!--  -->
+    <link rel="stylesheet" href="./css/lib/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -317,6 +322,26 @@
       </div>
     </section>
 
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
     <!-- merit -->
     <section class="merit">
       <div class="merit__inner inner">
@@ -468,7 +493,7 @@
                 僕があまりにも起きない場合、相手に怒られることはあるのでしょうか？怖くて朝も起きられません。</span
               >
             </button>
-            <div class="qa-box__body" style="display: block;">
+            <div class="qa-box__body" style="display: block">
               <div class="qa-box__a">
                 <span class="qa-box__a-icon">A</span>
                 <span class="qa-box__a-text">残念ながら、相手によります。</span>
@@ -510,6 +535,60 @@
         </div>
       </div>
     </section>
+
+    <section class="gallery">
+      <div class="gallery__inner inner">
+        <div class="gallery__title">
+          <div class="title">
+            <div class="title__en">GALLERY</div>
+            <div class="title__ja">ギャラリー</div>
+          </div>
+        </div>
+        <div class="gallery__slider">
+          <!-- Slider main container -->
+          <div class="swiper gallery__swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery__card">
+                  <div class="gallery__card__image">
+                    <img src="./img/gallery-1.png" alt="" />
+                  </div>
+                  <p class="gallery__text">最高な海。を拝んでいる私最高...</p>
+                </div>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery__card">
+                  <div class="gallery__card__image">
+                    <img src="./img/gallery-2.png" alt="" />
+                  </div>
+                  <p class="gallery__text">
+                    モーニングは一番のり。今日も私えらい。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery__card">
+                  <div class="gallery__card__image">
+                    <img src="./img/gallery-3.png" alt="" />
+                  </div>
+                  <p class="gallery__text">
+                    風車のある公園ヨガ。みんな私に釘付け。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination gallery__pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev gallery__prev"></div>
+            <div class="swiper-button-next gallery__next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- contact -->
     <section class="contact">
       <div class="contact__inner inner">
@@ -672,6 +751,8 @@
     </footer>
 
     <a href="" class="pagetop"><img src="./img/pagetop-img.png" alt="" /></a>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="./js/lib/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
