@@ -6,6 +6,12 @@
 共通
 -----------------------------------*/
 
+//cssでスクロール
+//簡単に実装できるが細かい指定はできない
+// html {
+//   scroll-behavior: smooth; //auto or smooth
+// }
+
 body {
   font-size: config.$font-size-base;
   line-height: config.$line-height-base;
@@ -1969,11 +1975,18 @@ movie
   bottom: 10px;
   // width: calc(50 / 375 * 100%);
   width: min(calc(50 / 375 * 100%), 50px); /*最大50pxまで*/
-
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  
   @include mixin.mq(pc) {
     width: 76px;
     right: 16px;
     bottom: 30px;
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
   }
   img {
   }

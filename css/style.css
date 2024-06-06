@@ -2144,6 +2144,9 @@ movie
   right: 10px;
   bottom: 10px;
   width: min(13.3333333333%, 50px); /*最大50pxまで*/
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 @media screen and (min-width: 768px) {
   .pagetop {
@@ -2151,4 +2154,8 @@ movie
     right: 16px;
     bottom: 30px;
   }
+}
+.pagetop.is-show {
+  opacity: 1;
+  visibility: visible;
 }
