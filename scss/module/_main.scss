@@ -714,6 +714,68 @@ about
   }
 }
 
+.about-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto; //浮かせて真ん中寄せ（fixed/insetと一緒に使う）
+  max-width: calc(100% - 15px * 2);
+  max-height: calc(100% - 20px * 2);
+  overflow: auto;
+  border-radius: 20px;
+  background: #fff;
+  border: none;
+  padding: 16px 15px 64px;
+  z-index: 10;
+  overscroll-behavior-y: none; //垂直方向のスクロールを制御
+  @include mixin.mq(pc) {
+    width: 1140px;
+    padding: 49px 70px 75px;
+  }
+
+  //js:showModalで使える擬似要素
+  &::backdrop {
+    opacity: 0.2;
+    background: #000;
+  }
+}
+
+.about-modal__head {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+}
+
+.about-modal__close-icon {
+  img {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+.about-modal__body {
+  margin-top: 12px;
+  @include mixin.mq(pc) {
+    margin-top: 49px;
+  }
+  p {
+    font-size: 14px;
+    @include mixin.mq(pc) {
+      font-size: 16px;
+    }
+    &:nth-child(n + 2) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.about-modal__close-button {
+  text-align: center;
+  @include mixin.mq(pc) {
+    margin-top: 30px;
+  }
+}
+
 /*----------------------------------
 movie
 -----------------------------------*/
