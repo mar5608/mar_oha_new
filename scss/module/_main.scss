@@ -1977,7 +1977,7 @@ movie
   width: min(calc(50 / 375 * 100%), 50px); /*最大50pxまで*/
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
-  
+
   @include mixin.mq(pc) {
     width: 76px;
     right: 16px;
@@ -1989,5 +1989,25 @@ movie
     visibility: visible;
   }
   img {
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s, transform 1s;
+
+  &.is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s;
+
+  &.is-in-view {
+    opacity: 1;
   }
 }

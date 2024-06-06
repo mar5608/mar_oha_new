@@ -141,3 +141,20 @@ jQuery(window).on("scroll", function () {
 //     pageTop.classList.remove("is-show");
 //   }
 // });
+
+const intersectionObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      //表示領域に入る
+      entry.target.classList.add("is-in-view");
+    } else {
+      //毎回つけ外しするなら書く
+      // entry.target.classList.remove("is-in-view");
+    }
+  });
+});
+
+const inViewItems = document.querySelectorAll(".js-in-view");
+inViewItems.forEach(function (inViewItem) {
+  intersectionObserver.observe(inViewItem);
+});
