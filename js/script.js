@@ -91,3 +91,25 @@ jQuery(".js-modal-close").on("click", function (e) {
 //     }
 //   });
 // });
+
+/** スムーススクロール*/
+jQuery('a[href^="#"]').on("click", function (e) {
+  const speed = 300;
+  const id = jQuery(this).attr("href");
+  const target = jQuery("#" == id ? "html" : id);
+  const position = jQuery(target).offset().top;
+  jQuery("html,body").animate(
+    {
+      scrollTop: position,
+    },
+    speed,
+    "swing" // swing or liner
+  );
+  // jQuery("html,body").animate(
+  //   {
+  //     scrollTop: 0,
+  //   },
+  //   1000,
+  //   "swing" // swing or liner
+  // );
+});
