@@ -18,6 +18,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
     <!--  -->
     <link rel="stylesheet" href="./css/lib/swiper-bundle.min.css" />
+    <!-- head内でanimate.cssを読み込む -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -135,7 +137,7 @@
     <!-- about -->
     <div id="about" class="about">
       <div class="about__inner">
-        <div class="about__title">
+        <div class="about__title wow fadeInUp">
           <img src="./img/about_logo.png" alt="OHA" />
         </div>
         <div class="about__content">
@@ -770,6 +772,11 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <script src="./js/lib/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- wow.min.jsを読み込んでから、初期設定しておく -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="./js/script.js"></script>
   </body>
 </html>
